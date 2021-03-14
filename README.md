@@ -1,40 +1,47 @@
-# brackets
-Скобки
-Задача
-Реализуйте функцию check(str, bracketsConfig), которая для данной последовательности скобок вернется, trueесли она верна, а в falseпротивном случае
+# Brackets
 
-Во втором параметре bracketsConfig- массив пар открытые-закрытые скобки. Каждый подмассив включает всего 2 элемента - открывающую и закрывающую скобки.
+## Task
 
-check ( '()' ,  [ [ '(' ,  ')' ] ] )  // -> верно 
-check ( '((())) ()' ,  [ [ '(' ,  ')' ] ] )  / / -> true 
-check ( '()) (' ,  [ [ '(' ,  ')' ] ] )  // -> false 
-check ( '([{}])' ,  [ [ '(' ,  ')' ] ,  [ '[' ,  '] ' ],  [ '{' ,  '}' ] ] )  // -> true 
-check ( '[(])' ,  [ [ '(' ,  ')' ] ,  [ '[' ,  ']' ] ] )  // -> ложная 
-проверка ( '[] ()' ,  [ [ '(' ,  ')' ] ,  [ '[' ,  ']' ] ]] )  // -> истинная 
-проверка ( '[] () (' , [ [ '(' , ')' ] ,  [ '[' ,  ']' ] ] )  // -> false 
+Implement function `check(str, bracketsConfig)`, that for given brackets sequence will return `true` if it is correct and `false` otherwise
 
-// особый случай: открывающая и закрывающая скобки могут быть одинаковыми :) 
+In the second param there is `bracketsConfig` - the array of pairs open-closed brackets. Each subarray includes only 2 elements - opening and closing bracket
 
-check ( '||' ,  [ [ '|' ,  ' | ' ] ] )  // -> true 
-check ( ' | () | ' ,  [ [ ' (' ,  ') ' ] ,  [ ' | ' ,  ' | ' ] ]] )  // -> true 
-check ( ' | (|) ' , [ [ '(',  ')' ] ,  [ '|' ,  '|' ] ] )  // -> ложная 
-проверка ( '| () | (||) ||' ,  [ [ '(' ,  ')' ] ,  [ '|' ,  '|' ] ] )  // -> правда
-Напишите свой код в src/index.js
+```js
+check('()', [['(', ')']]) // -> true
+check('((()))()', [['(', ')']]) // -> true
+check('())(', [['(', ')']]) // -> false
+check('([{}])', [['(', ')'], ['[', ']'], ['{', '}']]) // -> true
+check('[(])', [['(', ')'], ['[', ']']]) // -> false
+check('[]()', [['(', ')'], ['[', ']']]) // -> true
+check('[]()(', [['(', ')'], ['[', ']']]) // -> false
 
-Подготовить и протестировать
-Установите Node.js
-Форк этого репозитория: https://github.com/Shastel/brackets/
-Клонируйте только что созданное репо: https://github.com/ <% your_github_username%> / brackets /
-Перейти в папку brackets
-Для установки всех зависимостей используйте npm install
-Запустить тест npm в командной строке
-Вы увидите количество пройденных и невыполненных тестов, которые вы прошли 100% тестов, равны 100p в баллах.
-Отправить в приложение RS
-Откройте приложение RS и войдите в систему
-Перейти на страницу отправки задачи
-Выберите вашу задачу (скобки)
-Нажмите кнопку отправки и наслаждайтесь
-Примечания
-Мы рекомендуем вам использовать nodejs версии 10 или ниже. Если вы используете какие-либо функции, которые не поддерживаются узлом v10, оценка не будет отправлена.
-Пожалуйста, убедитесь, что каждый ваш тест в пределах 30 секунд.
-кредиты @yankouskia
+// special case: opening and closing bracket can be the same :)
+
+check('||', [['|', '|']]) // -> true
+check('|()|', [['(', ')'], ['|', '|']]) // -> true
+check('|(|)', [['(', ')'], ['|', '|']]) // -> false
+check('|()|(||)||', [['(', ')'], ['|', '|']]) // -> true
+```
+
+Write your code in `src/index.js`
+
+## Prepare and test
+1. Install [Node.js](https://nodejs.org/en/download/)   
+2. Fork this repository: https://github.com/Shastel/brackets/  
+3. Clone your newly created repo: https://github.com/<%your_github_username%>/brackets/  
+4. Go to folder `brackets`  
+5. To install all dependencies use [`npm install`](https://docs.npmjs.com/cli/install)  
+6. Run npm test in command line  
+7. You will see the number of passing and failing tests you 100% of passing tests is equal to 100p in score  
+
+## Submit to [rs app](https://app.rs.school)
+1. Open [rs app](https://app.rs.school) and login
+2. Go to [submit task page](https://app.rs.school/course/submit-task?course=rs-2019-q3)
+3. Select your task (brackets)
+4. Press submit button and enjoy
+
+### Notes
+1. We recommend you to use nodejs of version 10 or lower. If you using any of features that does not supported by node v10, score won't be submitted.
+2. Please be sure that each of your test in limit of 30sec.
+
+credits [@yankouskia](https://github.com/yankouskia/)
